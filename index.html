@@ -30,8 +30,8 @@
 			<div class="content">
 				<div id="rgbKineticSlider" class="rgbKineticSlider"></div>
 				<nav>
-			        <a href="#" class="main-nav prev" data-nav="previous">Prev <span></span></a>
-			        <a href="#" class="main-nav next" data-nav="next">Next <span></span></a>
+			        <a href="#" id="prev" class="main-nav prev" data-nav="previous">Prev <span></span></a>
+			        <a href="#" id="next" class="main-nav next" data-nav="next">Next <span></span></a>
                 </nav>
 			</div>
 		</main>
@@ -80,7 +80,7 @@
 
 			    slideTransitionDuration : 1, // transition duration
 			    transitionScaleIntensity : 30, // scale intensity during transition
-			    transitionScaleAmplitude : 180, // scale amplitude during transition
+			    transitionScaleAmplitude : 160, // scale amplitude during transition
 
 			    nav: true, // enable navigation
 			    navElement: '.main-nav', // set nav class
@@ -100,7 +100,7 @@
 
 			    textTitleColor : 'white', // title color
 			    textTitleSize : 125, // title size
-			    mobileTextTitleSize : 125, // title size
+			    mobileTextTitleSize : 80, // title size
 			    textTitleLetterspacing : 3, // title letterspacing
 
 			    textSubTitleColor : 'white', // subtitle color ex : 0x000000
@@ -121,6 +121,13 @@
 				$('#nav').removeClass('hide');
 			}
 		});
+
+		setInterval(()=>{
+			let handle = $("#next")
+			handle.trigger("click")
+			handle.trigger("mouseenter")
+			console.log("trigger")
+		},5000)
 
 		</script>
 	</body>
